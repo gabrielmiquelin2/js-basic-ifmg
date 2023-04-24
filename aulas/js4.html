@@ -1,0 +1,24 @@
+
+<html>
+  <body>
+    <script>
+       function buscarCep(){
+          let cep = prompt("Qual CEP deseja buscar");
+          let url = "https://brasilapi.com.br/api/cep/v2/" + cep;
+          
+          fetch(url) //busca dados de outro lugar
+          .then(function(resposta){
+            resposta.json().then(function(dados){
+              console.log(dados)
+              alert("Sua cidade é " + dados.city)
+            })
+          })
+          .catch(function(erro){
+            console.log("Ocorreu um erro ao buscar os dados", erro)
+          })
+       }
+ 
+       buscarCep()
+    </script>
+  </body>
+</html>

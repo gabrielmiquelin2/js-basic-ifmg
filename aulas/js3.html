@@ -1,0 +1,29 @@
+
+<html>
+  <body>
+    <script>
+  
+  const itemList = [];
+
+  while (true) {
+    const newItem = prompt("Digite o nome do item ou pressione cancelar para finalizar a lista:");
+    
+    if (newItem === null) {
+      break; // usuário cancelou a entrada de novos itens
+    }
+    
+    if (newItem.trim() !== "") {
+      itemList.push(newItem.trim()); // adicionar o item à lista (após remover espaços em branco)
+    }
+  }
+
+  if (itemList.length === 0) {
+    alert("A lista está vazia!");
+  } else {
+    const itemListString = itemList.join(", "); // converter a lista em uma string formatada
+    alert(`Você deve comprar os seguintes itens: ${itemListString}`);
+  }
+
+    </script>
+  </body>
+</html>
